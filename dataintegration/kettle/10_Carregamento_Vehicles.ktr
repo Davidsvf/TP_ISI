@@ -604,7 +604,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\rafae\Desktop\isiTrabalho\Fase2\Vehicles_Processado.csv</filename>
+    <filename>${Internal.Transformation.Filename.Directory}/../../data/output/Vehicles_Processado.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>

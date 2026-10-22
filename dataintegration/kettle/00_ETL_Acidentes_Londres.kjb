@@ -617,7 +617,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:\Users\rafae\Desktop\isiTrabalho\Fase3\09_Carregamento_Acidentes.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/09_Carregamento_Acidentes.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -656,7 +656,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:\Users\rafae\Desktop\isiTrabalho\Fase3\10_Carregamento_Vehicles.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/10_Carregamento_Vehicles.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -716,7 +716,7 @@ DELETE FROM dbo.Acidentes;
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:\Users\rafae\Desktop\isiTrabalho\Fase3\11_Relatorio_Estatistico.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/11_Relatorio_Estatistico.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -803,7 +803,7 @@ DELETE FROM dbo.Acidentes;
       <delete_all_before>Y</delete_all_before>
       <fields>
         <field>
-          <name>C:\Users\rafae\Desktop\isiTrabalho\Fase3</name>
+          <name>${Internal.Entry.Current.Directory}/../../data/output/estatisticas/</name>
           <filemask>Estatisticas_.*\.json</filemask>
         </field>
       </fields>

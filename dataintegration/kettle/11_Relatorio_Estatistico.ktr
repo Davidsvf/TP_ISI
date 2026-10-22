@@ -1257,7 +1257,7 @@ ORDER BY total_condutores DESC;
     <encoding>UTF-8</encoding>
     <addtoresult>N</addtoresult>
     <file>
-      <name>${Internal.Entry.Current.Directory}/Estatisticas_Gerais</name>
+      <name>${Internal.Transformation.Filename.Directory}/../../data/output/estatisticas/Estatisticas_Gerais</name>
       <extention>json</extention>
       <append>N</append>
       <split>N</split>
@@ -1327,7 +1327,7 @@ ORDER BY total_condutores DESC;
     <encoding>UTF-8</encoding>
     <addtoresult>N</addtoresult>
     <file>
-      <name>${Internal.Entry.Current.Directory}/Estatisticas_Faixa_Etaria</name>
+      <name>${Internal.Transformation.Filename.Directory}/../../data/output/estatisticas/Estatisticas_Faixa_Etaria</name>
       <extention>json</extention>
       <append>N</append>
       <split>N</split>
@@ -1381,7 +1381,7 @@ ORDER BY total_condutores DESC;
     <encoding>UTF-8</encoding>
     <addtoresult>N</addtoresult>
     <file>
-      <name>${Internal.Entry.Current.Directory}/Estatisticas_Faixa_Gravidade</name>
+      <name>${Internal.Transformation.Filename.Directory}/../../data/output/estatisticas/Estatisticas_Faixa_Gravidade</name>
       <extention>json</extention>
       <append>N</append>
       <split>N</split>
@@ -1439,7 +1439,7 @@ ORDER BY total_condutores DESC;
     <encoding>UTF-8</encoding>
     <addtoresult>N</addtoresult>
     <file>
-      <name>${Internal.Entry.Current.Directory}/Estatisticas_Meteorologia_Gravidade</name>
+      <name>${Internal.Transformation.Filename.Directory}/../../data/output/estatisticas/Estatisticas_Meteorologia_Gravidade</name>
       <extention>json</extention>
       <append>N</append>
       <split>N</split>
@@ -1497,7 +1497,7 @@ ORDER BY total_condutores DESC;
     <encoding>UTF-8</encoding>
     <addtoresult>N</addtoresult>
     <file>
-      <name>${Internal.Entry.Current.Directory}/Estatisticas_Periodo_Gravidade</name>
+      <name>${Internal.Transformation.Filename.Directory}/../../data/output/estatisticas/Estatisticas_Periodo_Gravidade</name>
       <extention>json</extention>
       <append>N</append>
       <split>N</split>
@@ -1555,7 +1555,7 @@ ORDER BY total_condutores DESC;
     <encoding>UTF-8</encoding>
     <addtoresult>N</addtoresult>
     <file>
-      <name>${Internal.Entry.Current.Directory}/Estatisticas_Sexo</name>
+      <name>${Internal.Transformation.Filename.Directory}/../../data/output/estatisticas/Estatisticas_Sexo</name>
       <extention>json</extention>
       <append>N</append>
       <split>N</split>

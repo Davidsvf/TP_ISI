@@ -474,6 +474,10 @@
         <attribute>N</attribute>
       </attribute>
       <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
         <code>PORT_NUMBER</code>
         <attribute>1521</attribute>
       </attribute>
@@ -507,6 +511,130 @@
     </hop>
   </order>
   <step>
+    <name>Carregar Acidentes SQL Server</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>AcidentesLondresDB</connection>
+    <schema>dbo</schema>
+    <table>Acidentes</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>collision_index</column_name>
+        <stream_name>collision_index</stream_name>
+      </field>
+      <field>
+        <column_name>longitude</column_name>
+        <stream_name>longitude</stream_name>
+      </field>
+      <field>
+        <column_name>latitude</column_name>
+        <stream_name>latitude</stream_name>
+      </field>
+      <field>
+        <column_name>number_of_casualties</column_name>
+        <stream_name>number_of_casualties</stream_name>
+      </field>
+      <field>
+        <column_name>date</column_name>
+        <stream_name>date</stream_name>
+      </field>
+      <field>
+        <column_name>time</column_name>
+        <stream_name>time</stream_name>
+      </field>
+      <field>
+        <column_name>local_authority_ons_district</column_name>
+        <stream_name>local_authority_ons_district</stream_name>
+      </field>
+      <field>
+        <column_name>speed_limit</column_name>
+        <stream_name>speed_limit</stream_name>
+      </field>
+      <field>
+        <column_name>dia_semana</column_name>
+        <stream_name>dia_semana</stream_name>
+      </field>
+      <field>
+        <column_name>periodo_dia</column_name>
+        <stream_name>periodo_dia</stream_name>
+      </field>
+      <field>
+        <column_name>numero_veiculos</column_name>
+        <stream_name>numero_veiculos</stream_name>
+      </field>
+      <field>
+        <column_name>tipo_zona</column_name>
+        <stream_name>tipo_zona</stream_name>
+      </field>
+      <field>
+        <column_name>estado_estrada</column_name>
+        <stream_name>estado_estrada</stream_name>
+      </field>
+      <field>
+        <column_name>condicao_luminosidade</column_name>
+        <stream_name>condicao_luminosidade</stream_name>
+      </field>
+      <field>
+        <column_name>gravidade_acidente</column_name>
+        <stream_name>gravidade_acidente</stream_name>
+      </field>
+      <field>
+        <column_name>data_hora_acidente</column_name>
+        <stream_name>data_hora_acidente</stream_name>
+      </field>
+      <field>
+        <column_name>temperatura</column_name>
+        <stream_name>temperatura</stream_name>
+      </field>
+      <field>
+        <column_name>precipitacao</column_name>
+        <stream_name>precipitacao</stream_name>
+      </field>
+      <field>
+        <column_name>velocidade_vento</column_name>
+        <stream_name>velocidade_vento</stream_name>
+      </field>
+      <field>
+        <column_name>condicao_meteorologica</column_name>
+        <stream_name>condicao_meteorologica</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>352</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Ler Acidentes Integrados</name>
     <type>CsvInput</type>
     <description/>
@@ -517,7 +645,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\rafae\Desktop\isiTrabalho\Fase2\CollisionsComMeteorologia.csv</filename>
+    <filename>${Internal.Transformation.Filename.Directory}/../../data/output/Acidentes_Londres_Integrados.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -534,7 +662,7 @@
     <fields>
       <field>
         <name>collision_index</name>
-        <type>String</type>
+        <type>Integer</type>
         <format>#</format>
         <currency>€</currency>
         <decimal>,</decimal>
@@ -713,8 +841,8 @@
         <type>BigNumber</type>
         <format>#,###.#</format>
         <currency>€</currency>
-        <decimal>,</decimal>
-        <group/>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>4</length>
         <precision>1</precision>
         <trim_type>none</trim_type>
@@ -724,8 +852,8 @@
         <type>BigNumber</type>
         <format>#,###.#</format>
         <currency>€</currency>
-        <decimal>,</decimal>
-        <group/>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>3</length>
         <precision>1</precision>
         <trim_type>none</trim_type>
@@ -735,8 +863,8 @@
         <type>BigNumber</type>
         <format>#,###.#</format>
         <currency>€</currency>
-        <decimal>,</decimal>
-        <group/>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>4</length>
         <precision>1</precision>
         <trim_type>none</trim_type>
@@ -763,130 +891,6 @@
     </remotesteps>
     <GUI>
       <xloc>144</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Carregar Acidentes SQL Server</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>AcidentesLondresDB</connection>
-    <schema>dbo</schema>
-    <table>Acidentes</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>collision_index</column_name>
-        <stream_name>collision_index</stream_name>
-      </field>
-      <field>
-        <column_name>longitude</column_name>
-        <stream_name>longitude</stream_name>
-      </field>
-      <field>
-        <column_name>latitude</column_name>
-        <stream_name>latitude</stream_name>
-      </field>
-      <field>
-        <column_name>number_of_casualties</column_name>
-        <stream_name>number_of_casualties</stream_name>
-      </field>
-      <field>
-        <column_name>date</column_name>
-        <stream_name>date</stream_name>
-      </field>
-      <field>
-        <column_name>time</column_name>
-        <stream_name>time</stream_name>
-      </field>
-      <field>
-        <column_name>local_authority_ons_district</column_name>
-        <stream_name>local_authority_ons_district</stream_name>
-      </field>
-      <field>
-        <column_name>speed_limit</column_name>
-        <stream_name>speed_limit</stream_name>
-      </field>
-      <field>
-        <column_name>dia_semana</column_name>
-        <stream_name>dia_semana</stream_name>
-      </field>
-      <field>
-        <column_name>periodo_dia</column_name>
-        <stream_name>periodo_dia</stream_name>
-      </field>
-      <field>
-        <column_name>numero_veiculos</column_name>
-        <stream_name>numero_veiculos</stream_name>
-      </field>
-      <field>
-        <column_name>tipo_zona</column_name>
-        <stream_name>tipo_zona</stream_name>
-      </field>
-      <field>
-        <column_name>estado_estrada</column_name>
-        <stream_name>estado_estrada</stream_name>
-      </field>
-      <field>
-        <column_name>condicao_luminosidade</column_name>
-        <stream_name>condicao_luminosidade</stream_name>
-      </field>
-      <field>
-        <column_name>gravidade_acidente</column_name>
-        <stream_name>gravidade_acidente</stream_name>
-      </field>
-      <field>
-        <column_name>data_hora_acidente</column_name>
-        <stream_name>data_hora_acidente</stream_name>
-      </field>
-      <field>
-        <column_name>temperatura</column_name>
-        <stream_name>temperatura</stream_name>
-      </field>
-      <field>
-        <column_name>precipitacao</column_name>
-        <stream_name>precipitacao</stream_name>
-      </field>
-      <field>
-        <column_name>velocidade_vento</column_name>
-        <stream_name>velocidade_vento</stream_name>
-      </field>
-      <field>
-        <column_name>condicao_meteorologica</column_name>
-        <stream_name>condicao_meteorologica</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>352</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
